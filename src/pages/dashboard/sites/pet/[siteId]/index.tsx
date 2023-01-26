@@ -5,8 +5,7 @@ import { petGetSite } from '@/lib/sites/getSite'
 import { petGetSites } from '@/lib/sites/getSites'
 import { PaginationProvider } from '@/providers/PaginationContext'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
-import { GetStaticProps, GetStaticPropsContext } from 'next'
-import { usePathname, useRouter } from 'next/navigation'
+import { GetStaticPropsContext } from 'next'
 import React from 'react'
 
 export const getSite = async (id: string) => {
