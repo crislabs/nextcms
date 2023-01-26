@@ -86,23 +86,7 @@ export function FormSite(props: Props) {
 
     },
   });
-  // const { mutate: createPetPage1 } = useMutation({
-  //   mutationFn: async (input: CreatePage) => await portfolioCreatePage1(input),
 
-  //   onSuccess: async (data) => {
-  //     queryClient.setQueryData<Page[]>(
-  //       ['portfolio-get-sites1', data.parentId],
-  //       (old) => [...(old as Page[]), data],
-  //     );
-  //     await SwalMessage(' Page Created');
-  //     toggle();
-  //   },
-  //   onError: (err) => {
-  //     console.log('err', err);
-  //     // SwalMessageSiteCreateError(error.response.errors[0].message);
-  //   },
-  // });
- 
   const {
     register,
     handleSubmit,
@@ -137,117 +121,12 @@ export function FormSite(props: Props) {
     {
       if (site) {
         updatePetSite.mutate(update)
-
-        if (query.length === 4) {
-          // query[2] === 'site0' &&
-          //   updatePetPage0({ ...form, id: query[3], parentId: query[3] });
-          // query[2] === 'site1' &&
-          //   updatePetPage1({ ...form, id: query[3], parentId: query[3] });
-          // query[2] === 'site2' &&
-          //   updatePetPage2({ ...form, id: query[3], parentId: query[3] });
-          // query[2] === 'site3' &&
-          //   updatePetPage3({ ...form, id: query[3], parentId: query[3] });
-        }
       } else {
         createPetSite.mutate(create)
-        if (query.length === 4) {
-          // query[2] === 'site0' &&
-          //   createPetPage1({ ...form, parentId: query[3] });
-          // query[2] === 'site1' &&
-          //   createPetPage2({ ...form, parentId: query[3] });
-          // query[2] === 'site2' &&
-          //   createPetPage3({ ...form, parentId: query[3] });
-        }
-        // query.length === 2 &&
-          // createPetPage0({
-          //   ...form,
-          //   parentId: process.env.NEXT_PUBLIC_SITE_URL as string,
-          // });
-        // console.log('form', { ...form, parentId: process.env.NEXT_PUBLIC_SITE_URL as string })
+        
       }
     }
   };
-
-  // const onFileSelected = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-  //   if (!target.files || target.files.length === 0) {
-  //     return;
-  //   }
-  //   try {
-  //     for (const file of target.files) {
-  //       const formData = new FormData();
-  //       formData.append('photo_url', file);
-  //       formData.append('parentId', query[3]);
-  //       formData.append('siteId', process.env.NEXT_PUBLIC_SITE_URL as string);
-  //       formData.append('type', 'site');
-
-  //       const { data } = await axios.post(
-  //         `${process.env.NEXT_PUBLIC_API_BACKEND_URL}/upload/file`,
-  //         formData,
-  //       );
-  //       // updatePortfolioImagePage0({
-  //       //   id: query[3],
-  //       //   type: 'site',
-  //       //   uid: session?.token.sid as string,
-  //       //   images: {
-  //       //     src: data.url,
-  //       //     alt: 'alt from image',
-  //       //   },
-  //       // });
-  //     }
-  //   } catch (error) {
-  //     // const err = error as AxiosError
-  //     // const { message } = err.response?.data as {message: string}
-  //     // Swal.fire({
-  //     //   icon: 'error',
-  //     //   name: 'Oops...',
-  //     //   text: message,
-  //     //   footer: '<a href="">Why do I have this issue?</a>'
-  //     // })
-  //   }
-  // };
-  // const uploadURL = async () => {
-  //   toggle();
-  //   const { value: url } = await Swal.fire({
-  //     input: 'url',
-  //     inputAutoTrim: true,
-  //     inputLabel: 'URL Image',
-  //     inputPlaceholder: 'Enter the URL',
-  //     inputAttributes: {
-  //       autocomplete: 'off',
-  //     },
-  //   });
-  //   if (url) {
-  //     try {
-  //       const { data } = await axios.post(
-  //         `${process.env.NEXT_PUBLIC_API_BACKEND_URL}/upload/file-url`,
-  //         {
-  //           photo_url: url,
-  //           siteId: query[3],
-  //           parentId: query[3],
-  //           type: 'site',
-  //         },
-  //       );
-  //       // updatePortfolioImagePage0({
-  //       //   id: query[3],
-  //       //   type: 'site',
-  //       //   uid: session?.token.sid as string,
-  //       //   images: {
-  //       //     src: data.url,
-  //       //     alt: 'alt from image',
-  //       //   },
-  //       // });
-  //     } catch (error) {
-  //       const err = error as AxiosError;
-  //       const { message } = err.response?.data as { message: string };
-  //       Swal.fire({
-  //         icon: 'error',
-  //         title: 'Oops...',
-  //         text: message,
-  //         footer: '<a href="">Why do I have this issue?</a>',
-  //       });
-  //     }
-  //   }
-  // };
 
   return (
     <form

@@ -1,3 +1,4 @@
+import Hero from '@/components/Hero'
 import LayoutHeader from '@/layouts/layoutHeader'
 import Head from 'next/head'
 
@@ -10,7 +11,7 @@ export default function Page() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Hola</h1>
+      <Hero />
       {/* <main className={styles.main}>
         <div className={styles.description}>
           <p>
